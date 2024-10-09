@@ -40,7 +40,6 @@ body {
 #main-page {
   position: absolute;
   margin: 0;
-  padding: 2px;
   background-color: var(--page-color);
   width: 100dvw;
   height: 100dvh;
@@ -48,7 +47,7 @@ body {
 
 #header {
   /* border: 2px solid blue; */
-  border-bottom: 1px solid var(--text-color-one);
+  /* border-bottom: 1px solid var(--text-color-one); */
   position: fixed;
   width: 100dvw;
   display: flex;
