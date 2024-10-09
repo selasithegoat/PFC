@@ -80,6 +80,7 @@ body {
       }
   }
 }
+
 .menu-links {
   width: 60%;
   margin: 0 auto;
@@ -87,12 +88,31 @@ body {
   justify-content: center;
   align-items: center;
   gap: 25px;
+}
 
-  a {
-    color: var(--page-color);
-    text-decoration: none;
+.menu-links a {
+  color: var(--page-color);
+  text-decoration: none;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--page-color);
+    transform: scaleX(0); 
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
   }
 }
+
 .sign-up {
   /* border: 1px solid white; */
   width: 20%;
