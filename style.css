@@ -1,9 +1,11 @@
 :root {
   --font-family-pri: "Poppins", san-serif;
+  --font-family-sec: "Natural Precision", sans-serif;
   --font-size-pri: "14px";
   --page-color: #252324;
   --text-color-one: #e9e9e9;
   --text-color-two: #ffc400;
+  --text-color-three:#ffff;
 }
 
 *,
@@ -47,7 +49,6 @@ body {
 
 #header {
   /* border: 2px solid blue; */
-  /* border-bottom: 1px solid var(--text-color-one); */
   position: fixed;
   width: 100dvw;
   display: flex;
@@ -68,15 +69,15 @@ body {
 .logo {
   /* border: 1px solid black; */
   width: fit-content;
-  a{
+  a {
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     color: var(--page-color);
     img {
-        width: 60px;
-      }
+      width: 60px;
+    }
   }
 }
 
@@ -102,7 +103,7 @@ body {
     width: 100%;
     height: 1px;
     background-color: var(--page-color);
-    transform: scaleX(0); 
+    transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
   }
@@ -150,7 +151,7 @@ body {
     padding: 0.7rem;
     color: var(--text-color-two);
     text-align: center;
-    font-family: 'Natural Precision', sans-serif;
+    font-family: var(--font-family-sec);
     font-size: 80px;
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -193,27 +194,129 @@ body {
 
 #events {
   background-color: var(--page-color);
-  width: 100%;
+  width: 100dvw;
   height: 100%;
   position: absolute;
   top: 100%;
   z-index: 1;
   overflow: hidden;
 
-
-  .header{
+  .header {
     /* border: 1px solid red; */
-    margin: 8rem auto;
-    .back-icon{
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-        align-items: center;
-        h3{
-            color: var(--text-color-one);
-        }
+    margin: 7rem auto 1rem;
+    width: 200px;
+    .events-page-title {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        color: var(--text-color-one);
+        text-align: center;
+      }
     }
   }
+}
+
+/* ################ Events ################## */
+
+.events-content-page {
+  /* border: 2px solid white; */
+  margin: 0 auto;
+  padding: 2rem ;
+  width: 95dvw;
+  height: 80dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 70px;
+  column-gap: 30px;
+  flex-wrap: wrap;
+  flex: 1;
+  overflow: scroll;
+
+
+  .event-cards {
+    /* border: 1px solid red; */
+    width:700px;
+    height: 500px;
+  }
+  .event-card-content{
+    position: relative;
+
+    img{
+      
+      margin: 0 auto;
+      width: 100%;
+      aspect-ratio: 3/2;
+      object-fit: contain;
+    }
+
+    .event-card-info{
+      /* border: 3px solid blue; */
+      position: absolute;
+      top: 0;
+      /* left: 15%; */
+      background: linear-gradient(#22222231, #222);
+      width: 100%;
+      height: 91%;
+      padding: 2rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+
+      .event-title{
+        font-family: var(--font-family-sec);
+        color: var(--text-color-two);
+        font-size: 3rem;
+      }
+      p{
+        color: var(--text-color-three);
+        font-weight: 700;
+        letter-spacing: 10px;
+        font-variant: small-caps;
+        font-size: 20px;
+      }
+    }
+
+    .event-links{
+      position: absolute;
+      top: 90%;
+      /* border: 1px solid red; */
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 1rem auto;
+    }
+    a {
+      text-decoration: none;
+      /* border: 1px solid white; */
+      width: 200px;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      color: var(--page-color);
+      text-align: center;
+      font-weight: 600;
+      background: linear-gradient(
+        to left,
+        var(--text-color-one) 50%,
+        var(--text-color-two) 50%
+      );
+      background-size: 200% 100%;
+      background-position: right bottom;
+      transition: all ease 0.3s;
+
+      &:hover {
+        background-position: left bottom;
+        color: var(--text-color-one);
+      }
+    }
+  }
+
 }
 
 /*##### Media Queries####*/
